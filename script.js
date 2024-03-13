@@ -1,21 +1,14 @@
-const divContainer = document.querySelector(".divContainer");
+const body = document.querySelector("body");
+let divContainer = document.querySelector(".divContainer");
+const setNumber = document.querySelector("#setNumber");
+const resetButton = document.querySelector("#resetButton");
 
 
 // Generate 16 X 16 grid
 
-for (let i = 0; i < 256; i++) {
-    const divSmall = document.createElement("div");
-    divSmall.classList.add("divSmall");
-
-    divContainer.appendChild(divSmall);
-}
-
-const divSmall = document.querySelectorAll(".divSmall");
-divSmall.forEach(function(i) {
-    i.addEventListener("mouseover", function(){
-        i.style.backgroundColor = getColor();
-    })
-})
+document.addEventListener("DOMContentLoaded", () => {
+    createGrid(16);
+});
 
 function getColor() {
     let letters = "0123456789ABCDEF";
@@ -24,17 +17,46 @@ function getColor() {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
-}
+};
 
-// Reset the grind
+function createGrid(squarePerSide) {
+    
+    let newSquareDimension = 640 / squarePerSide;
+    newSquareDimension += "px";
+    if (divContainer.children.length > 0) {
+        divContainer.innerHTML = "";
+    }
+    
+    for (let i = 0; i < squarePerSide ** 2; i++) {
+        const divSmall = document.createElement("div");
+        divSmall.classList.add("divSmall");
+        divSmall.style.border = "0px";
+        divSmall.style.width = newSquareDimension;
+        divSmall.style.height = newSquareDimension;
+        divContainer.appendChild(divSmall);
+    }
 
-const resetButton = document.querySelector("#reset");
-resetButton.addEventListener("click", function() {
+    const divSmall = document.querySelectorAll(".divSmall");
     divSmall.forEach(function(i) {
-            i.style.backgroundColor = "rgb(13, 76, 98)";
-        })
-})
+        i.addEventListener("mouseover", function() {
+            i.style.backgroundColor = getColor();
+        });
+    });
+};
 
-// set the number os squares
+setNumber.addEventListener("click", () => {
+    const userNumber = Number(prompt("Write a number between 1 and 100"));
 
+    if (userNumber > 100) {
+        alert("Error, the number should be less than 100");
+    } else {
+        createGrid(userNumber);
+    }
+});
 
+resetButton.addEventListener("click", () => {
+    const divSmall = document.querySelectorAll(".divSmall")
+    divSmall.forEach((i) => {
+        i.style.backgroundColor = "rgb(13, 76, 98)";
+    })
+});
