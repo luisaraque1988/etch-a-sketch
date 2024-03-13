@@ -21,8 +21,9 @@ function getColor() {
 
 function createGrid(squarePerSide) {
     
-    let newSquareDimension = 640 / squarePerSide;
+    let newSquareDimension = 560 / squarePerSide;
     newSquareDimension += "px";
+
     if (divContainer.children.length > 0) {
         divContainer.innerHTML = "";
     }
@@ -47,7 +48,7 @@ function createGrid(squarePerSide) {
 setNumber.addEventListener("click", () => {
     const userNumber = Number(prompt("Write a number between 1 and 100"));
 
-    if (userNumber > 100) {
+    if (userNumber > 100 || userNumber < 0) {
         alert("Error, the number should be less than 100");
     } else {
         createGrid(userNumber);
@@ -55,8 +56,5 @@ setNumber.addEventListener("click", () => {
 });
 
 resetButton.addEventListener("click", () => {
-    const divSmall = document.querySelectorAll(".divSmall")
-    divSmall.forEach((i) => {
-        i.style.backgroundColor = "rgb(13, 76, 98)";
-    })
+    createGrid(16);
 });

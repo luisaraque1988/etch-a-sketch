@@ -8,40 +8,57 @@
 
 body {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(11, 131, 91);
+}
+
+.container {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    width: 850px;
+    height: 870px;
     background-color: rgb(17, 202, 141);
+    margin: 20px;
+    border-radius: 50px;
+    
 }
 
 h1 {
-    margin: 40px;
+    margin: 10px;
     font-size: 50px;
     font-weight: 800;
-    color: rgb(27, 60, 6);
+    color: rgb(58, 84, 48);
+    text-shadow: 2px 3px aquamarine;
 }
 
 #buttonContainer {
     display: flex;
     gap: 30px;
+    justify-content: center;
 
     button {
         width: 120px;
         padding: 10px;
         border-radius: 8px;
-        margin: 20px;
+        margin: 10px;
         font-size: 14px;
+        border: solid 2px gray;
+        color: gray;
+        
     }
 }
-.divContainer, .newDivContainer {
-    border: solid rgb(26, 58, 144) 2px;
+.divContainer {
+    border: solid rgb(58, 84, 48) 9px;
     display: flex;
     flex-wrap: wrap;
-    width: 644px;
-    height: 644px;
+    width: 578px;
+    height: 578px;
     align-content: center;
     background-color: rgb(13, 76, 98);
-    margin-bottom: 80px;
-    margin-top: 20px;
+    margin: 20px;
+    border-style:ridge;
 
     
 }
