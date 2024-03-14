@@ -17,8 +17,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 850px;
-    height: 870px;
+    width: 750px;
+    height: 750px;
     background-color: rgb(17, 202, 141);
     margin: 20px;
     border-radius: 50px;
@@ -27,7 +27,7 @@ body {
 
 h1 {
     margin: 10px;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 800;
     color: rgb(58, 84, 48);
     text-shadow: 2px 3px aquamarine;
@@ -39,10 +39,10 @@ h1 {
     justify-content: center;
 
     button {
-        width: 120px;
-        padding: 10px;
+        width: 100px;
+        padding: 7px;
         border-radius: 8px;
-        margin: 10px;
+        margin: 5px;
         font-size: 14px;
         border: solid 2px gray;
         color: gray;
@@ -53,8 +53,8 @@ h1 {
     border: solid rgb(58, 84, 48) 9px;
     display: flex;
     flex-wrap: wrap;
-    width: 578px;
-    height: 578px;
+    width: 498px;
+    height: 498px;
     align-content: center;
     background-color: rgb(13, 76, 98);
     margin: 20px;

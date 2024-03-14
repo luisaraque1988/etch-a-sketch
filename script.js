@@ -21,7 +21,7 @@ function getColor() {
 
 function createGrid(squarePerSide) {
     
-    let newSquareDimension = 560 / squarePerSide;
+    let newSquareDimension = 480 / squarePerSide;
     newSquareDimension += "px";
 
     if (divContainer.children.length > 0) {
